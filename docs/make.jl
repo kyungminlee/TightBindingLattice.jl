@@ -22,7 +22,7 @@ end
 makedocs(
     modules=[TightBindingLattice],
     doctest=true,
-    sitename="TightBindingLattice.jl",
+    sitename="LatticeTools.jl",
     format=Documenter.HTML(prettyurls=!("local" in ARGS)),
     authors="Kyungmin Lee",
     checkdocs=:all,
