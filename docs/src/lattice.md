@@ -1,6 +1,6 @@
-# Defining a Lattice
+# Lattice Definition
 
-The most basic feature of `LatticeTools.jl` is defining a lattice system, which consist of:
+The most basic feature **LatticeTools.jl** provides is defining a lattice system, which consist of:
 1. a unit cell, defined by the lattice vectors and the basis sites
 2. Bravais lattice
 
@@ -15,7 +15,7 @@ The basis of the unit cell is represented as a list of sites, with ther names an
 The "name" of a site can be of any arbitrary type (except integer in order to avoid confusion with the site "index").
 Their locations are stored in fractional coordinates in units of the lattice vectors as objects of type [`FractCoord`](@ref).
 
-Creating a [`UnitCell`](@ref) is straight forward:
+Creating a [`UnitCell`](@ref) is straight forward, using [`makeunitcell`](@ref) and [`addsite!`](@ref).
 The following example defines a two-dimensional square unit cell with two sites, site A at location [0.1, 0],
 and site B at location [0.0, 0.1].
 ```@example example-unitcell
@@ -39,19 +39,19 @@ In such a case, the equivalence relation within the basis under translation is i
 For example, when the super cell is defined by lattice vectors [3, -1] and [1, 3] (in units of the lattice vectors of the original unit cell), 
 
 ```@repl
-using TightBindingLattice # hide
-cube = OrthoCube([3 1; -1 3]);
+using TightBindingLattice; # hide
+cube = OrthoCube([3 1; -1 3])
 cube.wrap([4,0])
 ```
 
 ## Lattice
 
-Now the two can be combined into a [`Lattice`](@ref).
+Now the two can be combined into a [`Lattice`](@ref) using [`makelattice`](@ref).
 
 ```@repl
-using TightBindingLattice # hide
-unitcell = makeunitcell([1.0 0.0; 0.0 1.0]; SiteType=String) # hide
-addsite!(unitcell, "A", FractCoord([0,0], [0.1, 0.0])) # hide
-addsite!(unitcell, "B", FractCoord([0,0], [0.0, 0.1])) # hide
-lattice = makelattice(lattice, [3 1; -1 3])
+using TightBindingLattice; # hide
+unitcell = makeunitcell([1.0 0.0; 0.0 1.0]; SiteType=String); # hide
+addsite!(unitcell, "A", FractCoord([0,0], [0.1, 0.0])); # hide
+addsite!(unitcell, "B", FractCoord([0,0], [0.0, 0.1])); # hide
+lattice = makelattice(unitcell, [3 1; -1 3])
 ```
