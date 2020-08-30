@@ -29,9 +29,9 @@ makedocs(
     pages = [
         "Home" => "index.md",
         "lattice.md",
-        "Symmetry" => [
-            "Symmetry/operation-space.md",
-            "Symmetry/symmetry-space.md",
+        "Symmetry Analysis" => [
+            "Symmetry/space-symmetry.md",
+            "Symmetry/space-operation.md",
             "Symmetry/irrep.md",
         ],
         "Examples" => [
