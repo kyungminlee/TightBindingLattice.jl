@@ -36,13 +36,15 @@ A finite size lattice with periodic boundary condition can be constructed as a q
 In such a case, the equivalence relation within the basis under translation is identity; only the equivalence relation within the Bravais lattice needs to be worked out.
 [`OrthoCube`](@ref) provides methods for calculating equivalence relation.
 
-For example, when the super cell is defined by lattice vectors [3, -1] and [1, 3] (in units of the lattice vectors of the original unit cell), 
-
+For example, when the super cell is defined by lattice vectors `[3, -1]` and `[1, 3]` (in units of the lattice vectors of the original unit cell), 
 ```@repl
 using TightBindingLattice # hide
 cube = OrthoCube([3 1; -1 3])
 cube.wrap([4, 0])
 ```
+Here `cube.wrap` is similar to `divrem`:
+`[1, 0]` is the super cell translation of `[4, 0]`, and `[1, 1]` is the remaining translation.
+
 
 ## Lattice
 

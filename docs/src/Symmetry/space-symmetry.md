@@ -45,7 +45,7 @@ group_multiplication_table([[1 0; 0 1], [1 0; 0 -1], [-1 0; 0 1], [-1 0; 0 -1]])
 
 ## Space symmetry
 
-**Symmetry** on the other hand, refers to a realization of the group structure.
+The term **symmetry**, on the other hand, is used to refer to realizations of the group structures on the lattice.
 Examples are [`TranslationSymmetry`](@ref), [`PointSymmetry`](@ref).
 
 In the current implementation of `LatticeTools.jl`, a symmetry object contains the following fields:
@@ -98,7 +98,6 @@ For proper specification of the space group, the sites need to be located at the
 The elements of the space symmetry (without considering combination with some local unitary transformation) can be thought of as a subset of the permutation group of the lattice sites.
 
 An "embedding" of a symmetry onto a lattice, is a symmetry structure whose elements are permutations of sites represented by [`SitePermutation`](@ref).
-
 
 ### Symmetry embedding of symmorphic symmetry
 
